@@ -1,12 +1,10 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
-  <RunningNum :num="num" />
+  <div class="app">
+    <RunningNum class="nums" :num="num" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import { RunningNum } from "./components/index.js";
 export default {
   name: "App",
   data: function () {
@@ -14,20 +12,20 @@ export default {
       num: "25323",
     };
   },
-  components: {
-    HelloWorld,
-    RunningNum,
+  mounted() {
+    // setInterval(() => {
+    //   // eslint-disable-next-line
+    //   this.num = +this.num + 1;
+    // }, 1000);
   },
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.nums {
+  /* height: 100px;
+ width: 50px; */
+  color: #fff;
+  font-size: 14px;
 }
 </style>

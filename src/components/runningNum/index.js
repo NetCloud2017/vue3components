@@ -1,7 +1,7 @@
 import component from './RunNum.vue';
 
-component.install = function(Vue) {
-    Vue.use(component.name, component)
+component.install = function(Vue, /*options */) {
+    Vue.component(component.name, component)
 };
 
 export default component

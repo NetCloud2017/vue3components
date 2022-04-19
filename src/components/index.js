@@ -1,5 +1,3 @@
-import RunningNum from "./runningNum";
+import RunningNum from "./runningNum/index.js";
 
-export const components = {
-    RunningNum,
-};
+export { RunningNum };
