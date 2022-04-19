@@ -1,17 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <RunningNum :num="num" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import HelloWorld from "./components/HelloWorld.vue";
+import { RunningNum } from "./components/index.js";
 export default {
-  name: 'App',
+  name: "App",
+  data: function () {
+    return {
+      num: "25323",
+    };
+  },
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+    RunningNum,
+  },
+};
 </script>
 
 <style>
