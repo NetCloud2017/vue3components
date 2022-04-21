@@ -35,9 +35,9 @@ export default {
       height: 0,
     };
   },
-  computed: {},
+ 
   beforeUpdate() {
-    console.log(this);
+    console.log(this, 'abc');
   },
   mounted() {
     this.$nextTick(() => {

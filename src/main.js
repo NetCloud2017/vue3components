@@ -11,14 +11,22 @@ app.mount("#app");
 document.addEventListener(
   "keydown",
   function (event) {
-    console.log(event, "asdf");
     let { key } = event;
     key = `${key}`.toLowerCase();
-
-    if (event.ctrlkey) {
-      let func = actions[key];
+    // control 组合键 操作
+    if (event.ctrlKey) {
+      let func = actions["control"] && actions["control"][key];
       func && func();
     }
+   // 阻止 浏览器 快捷键 默认事件 
+    if (event.preventDefault) {
+      event.stopPropagation();
+      event.preventDefault();
+    } else {
+      e.returnValue = false;
+      e.cancelBubble = true;
+    }
+    return false;
   },
   false
 );
