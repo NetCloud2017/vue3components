@@ -37,12 +37,19 @@ export default {
       offsets = nums.map((num, index) => {
         let ago = lastNums[index] || 0;
         return {
+          /* 
+            初始 时 都是 非零或 0  - 0 
+            运行时 
+          */
           // 获取差值计算滚动时间  单位（ms)
           time: Math.abs(num - ago == 0 ? 0 : num - ago) * 400,
           currentNum: num,
+          transformY: '',
         };
       });
+
       lastNum = num;
+      console.log(offsets, lastNums, 'sss');
       return offsets;
     },
   },

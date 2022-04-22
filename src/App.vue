@@ -13,10 +13,14 @@ export default {
     };
   },
   mounted() {
-    // setInterval(() => {
-    //   // eslint-disable-next-line
-    //   this.num = +this.num + 1;
-    // }, 1000);
+    let tiems = 0
+    let  timer = setInterval(() => {
+      tiems ++;
+      if (tiems === 10) {
+        clearInterval(timer);
+      }
+      this.num = (+this.num + 1) + '';
+    }, 1000);
   },
 };
 </script>

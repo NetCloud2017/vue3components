@@ -1,5 +1,6 @@
 <template>
   <div :class="[`${size}-size`, 'num_run']">
+        <!-- 位移  -->
     <ul
       class="num_list"
       :style="{
@@ -37,10 +38,12 @@ export default {
   },
  
   beforeUpdate() {
-    console.log(this, 'abc');
+    console.log(this.height, this.height * this.numItem.currentNum);
   },
+
   mounted() {
     this.$nextTick(() => {
+     // 计算 一个数字方块的高度。 
       let dom = this.$refs["numCell"],
         { height } = dom.getBoundingClientRect();
       this.height = height;

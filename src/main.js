@@ -1,7 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 // 关闭所有 eslint 报错；
-/* eslint-disable */
 import { RunningNum } from "./components/index.js";
 import "../static/common.css";
 import { actions } from "./keyValActions";
@@ -44,8 +43,8 @@ document.addEventListener(
       event.stopPropagation();
       event.preventDefault();
     } else {
-      e.returnValue = false;
-      e.cancelBubble = true;
+      // event.returnValue = false;
+      event.cancelBubble = true;
     }
     return false;
   },
