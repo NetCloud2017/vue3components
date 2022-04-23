@@ -9,17 +9,18 @@ export default {
   name: "App",
   data: function () {
     return {
-      num: "25323",
+      num: "25320",
     };
   },
   mounted() {
-    let tiems = 0
-    let  timer = setInterval(() => {
-      tiems ++;
+    let tiems = 0;
+    let timer = setInterval(() => {
+      tiems++;
       if (tiems === 10) {
         clearInterval(timer);
       }
-      this.num = (+this.num + 1) + '';
+      // 10000 到 99999 取值
+      this.num = Math.floor(Math.floor(Math.random() * 90000) + 1) + 9999 + "";
     }, 1000);
   },
 };
