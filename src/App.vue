@@ -1,6 +1,15 @@
 <template>
   <div class="app">
     <RunningNum class="nums" :num="num" />
+
+    <header>
+      <!--  -->
+    </header>
+    <section :class="`main-${cssLayout}`">
+      <aside class="aside"></aside>
+      <article class="contain"></article>
+    </section>
+    <footer></footer>
   </div>
 </template>
 
@@ -10,15 +19,12 @@ export default {
   data: function () {
     return {
       num: "25320",
+      //  normal ,  aside , dubAside
+      cssLayout: "normal",
     };
   },
   mounted() {
-    let tiems = 0;
-    let timer = setInterval(() => {
-      tiems++;
-      if (tiems === 10) {
-        clearInterval(timer);
-      }
+    setInterval(() => {
       // 10000 到 99999 取值
       this.num = Math.floor(Math.floor(Math.random() * 90000) + 1) + 9999 + "";
     }, 1000);
@@ -26,11 +32,35 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .nums {
   /* height: 100px;
  width: 50px; */
   color: #fff;
   font-size: 14px;
+}
+.main-aside,
+.main-normal,
+.main-dubAside {
+	//  要实现响应式布局 
+  height: 100%;
+  width: 100%;
+}
+.main-normal {
+  .aside {
+    display: none;
+  }
+}
+.main-aside {
+  .aside {
+    display: block;
+  }
+}
+.main-dubAside {
+  .aside {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
 }
 </style>

@@ -42,10 +42,9 @@ export default {
             运行时 
           */
           // 获取差值计算滚动时间  单位（ms)
-          // time: Math.abs(num - ago == 0 ? 0 : num - ago) * 400,
-          time: 400,
+          // time: Math.abs(num - ago == 0 ? 0 : num - ago) * 400, // 这里有个错误： 数值差值为  * 440 大于 1000 时 看不到 数字变更。
+          time: 600,
           currentNum: num,
-          transformY: '',
         };
       });
 
