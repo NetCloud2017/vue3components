@@ -45,6 +45,8 @@ export default {
 	//  要实现响应式布局 
   height: 100%;
   width: 100%;
+  border: 1px solid #fff;
+
 }
 .main-normal {
   .aside {
