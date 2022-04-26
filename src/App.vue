@@ -1,9 +1,11 @@
 <template>
   <div class="app">
-    <RunningNum class="nums" :num="num" />
 
-    <header>
-      <!--  -->
+    <header class='head'>
+      <!--   -->
+     <aIcon name="fullLayout"/> 
+    <RunningNum class="nums" :num="num" />
+      
     </header>
     <section :class="`main-${cssLayout}`">
       <aside class="aside"></aside>
@@ -33,20 +35,30 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.nums {
-  /* height: 100px;
- width: 50px; */
-  color: #fff;
-  font-size: 14px;
+  .nums {
+    /* height: 100px;
+   width: 50px; */
+    color: #fff;
+    font-size: 14px;
+  }
+.app {
+  height: 100%;
+  .head {
+    display: flex;
+  }
 }
+
 .main-aside,
 .main-normal,
 .main-dubAside {
 	//  要实现响应式布局 
-  height: 100%;
   width: 100%;
+  position: fixed;
+  top: 50px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
   border: 1px solid #fff;
-
 }
 .main-normal {
   .aside {

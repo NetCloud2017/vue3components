@@ -1,3 +1,3 @@
 import RunningNum from "./runningNum/index.js";
-
-export { RunningNum };
+import Icon from './icon/index'
+export { RunningNum, Icon };

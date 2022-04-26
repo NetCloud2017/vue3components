@@ -10,7 +10,7 @@
 </template>
 <script>
 import NumberItem from "./NumberItem";
-let lastNum = "0";
+// let lastNum = "0";
 export default {
   name: "RunningNum",
   props: {
@@ -31,7 +31,6 @@ export default {
     numStr2Arr() {
       let { num } = this,
         // 数字变数组 [ string number ]
-        lastNums = (lastNum + "").split(""),
         nums = (num + "").split(""),
         offsets;
       offsets = nums.map((num, /*index*/) => {
@@ -48,8 +47,7 @@ export default {
         };
       });
 
-      lastNum = num;
-      console.log(offsets, lastNums, 'sss');
+      // lastNum = num;
       return offsets;
     },
   },

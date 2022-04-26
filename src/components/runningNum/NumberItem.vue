@@ -38,10 +38,6 @@ export default {
     };
   },
 
-  beforeUpdate() {
-    console.log(this.height, this.height * this.numItem.currentNum);
-  },
-
   mounted() {
     this.$nextTick(() => {
       // 计算 一个数字方块的高度。

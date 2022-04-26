@@ -2,11 +2,13 @@ import { createApp } from "vue";
 import App from "./App.vue";
 // 关闭所有 eslint 报错；
 /* eslint-disable */
-import { RunningNum } from "./components/index.js";
+import { RunningNum , Icon} from "./components/index.js";
 import "../static/common.css";
+import './assets/fonts/index.css'
 import { actions } from "./keyValActions";
 const app = createApp(App);
 app.use(RunningNum);
+app.use(Icon)
 app.mount("#app");
 document.addEventListener(
   "keydown",
