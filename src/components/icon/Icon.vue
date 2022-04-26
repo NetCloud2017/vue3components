@@ -1,6 +1,6 @@
 <template>
   <div class="icon">
-    <i :class="['iconfont', `icon-${name}`]"></i>
+    <i :class="[`icon-${name}`]"></i>
   </div>
 </template>
 
@@ -18,10 +18,14 @@ export default {
 <style lang="less" scoped>
 .icon {
   min-height: 20px;
-//   height: auto;
+  display: inline-block;
+  //   height: auto;
   width: auto;
   i {
     font-size: inherit;
+    height: 20px;
+    width: 20px;
+    text-align: center;
   }
 }
 </style>

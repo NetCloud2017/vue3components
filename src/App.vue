@@ -1,12 +1,19 @@
 <template>
   <div class="app">
-
-    <header class='head'>
+    <header class="head">
       <!--   -->
-     <aIcon name="fullLayout"/> 
-    <RunningNum class="nums" :num="num" />
-      
+      <div class="left-icons">
+        <aIcon class="icon" name="fullLayout" />
+        <aIcon class="icon" name="asideLayout" />
+        <aIcon class="icon" name="dubAsideLayout" />
+      </div>
+
+      <div class="right-icons">
+        <aIcon class="icon" name="menu" />
+        <aIcon class="icon" name="personal" />
+      </div>
     </header>
+    <RunningNum class="nums" :num="num" />
     <section :class="`main-${cssLayout}`">
       <aside class="aside"></aside>
       <article class="contain"></article>
@@ -35,23 +42,36 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .nums {
-    /* height: 100px;
+.nums {
+  /* height: 100px;
    width: 50px; */
-    color: #fff;
-    font-size: 14px;
-  }
+  color: #fff;
+  font-size: 14px;
+}
 .app {
   height: 100%;
   .head {
+    padding: 0 35px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .left-icons,
+    .right-icons {
+      color: #fff;
+      .icon {
+        margin: 10px;
+        font-size: 20px;
+      }
+    }
+    
   }
 }
 
 .main-aside,
 .main-normal,
 .main-dubAside {
-	//  要实现响应式布局 
+  //  要实现响应式布局
+  box-sizing: border-box;
   width: 100%;
   position: fixed;
   top: 50px;
