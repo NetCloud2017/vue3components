@@ -3,9 +3,9 @@
     <header class="head">
       <!--   -->
       <div class="left-icons">
-        <aIcon class="icon" name="fullLayout" />
-        <aIcon class="icon" name="asideLayout" />
-        <aIcon class="icon" name="dubAsideLayout" />
+        <aIcon @click.stop="pageStyle('normal')" class="icon" name="fullLayout" />
+        <aIcon @click.stop="pageStyle('aside')" class="icon" name="asideLayout" />
+        <aIcon @click.stop="pageStyle('dubAside')" class="icon" name="dubAsideLayout" />
       </div>
 
       <div class="right-icons">
@@ -15,7 +15,10 @@
     </header>
     <RunningNum class="nums" :num="num" />
     <section :class="`main-${cssLayout}`">
-      <aside class="aside"></aside>
+      <aside class="aside">
+        <div class="analysis"></div>
+        <div class="news"></div>
+      </aside>
       <article class="contain"></article>
     </section>
     <footer></footer>
@@ -38,6 +41,11 @@ export default {
       this.num = Math.floor(Math.floor(Math.random() * 90000) + 1) + 9999 + "";
     }, 1000);
   },
+  methods: {
+    pageStyle (style) {
+      this.cssLayout = style
+    }
+  }
 };
 </script>
 
@@ -79,22 +87,45 @@ export default {
   left: 0;
   right: 0;
   border: 1px solid #fff;
+ display: flex; 
 }
 .main-normal {
   .aside {
     display: none;
   }
 }
-.main-aside {
+.main-aside, .main-dubAside{
   .aside {
     display: block;
+    border-right: 1px solid #fff;
+    height: 100%;
+    min-height: 740px;
+    max-width: 600px;
+    min-width: 400px;
+    flex-grow: 1;
+    .analysis {
+      display: none;
+    }
+  }
+  .contain {
+    height: 100%;
+    min-width: 800px;
+    flex-grow: 1;
   }
 }
+
 .main-dubAside {
   .aside {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    .analysis {
+      display: block;
+      flex-grow: 1;
+    }
+    .news {
+      flex-grow: 1;
+    }
   }
 }
 </style>
