@@ -6,5 +6,6 @@ export const actions = {
     s: function () {
       console.log(123);
     },
+   
   },
 };

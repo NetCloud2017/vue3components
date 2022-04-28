@@ -1,10 +1,10 @@
-import App from "../App.vue";
+import Home from "../home/HomePage.vue";
 import Help from "../help/HelpCenter.vue";
 import NavigatorCenter from "../navigatorCenter/NavigatorCenter.vue";
 export const routes = [
   {
     path: "/",
-    component: App,
+    component: Home,
   },
   {
     path: "/help",

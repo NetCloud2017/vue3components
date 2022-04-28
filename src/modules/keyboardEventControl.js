@@ -1,4 +1,4 @@
-import { actions } from "../keyValActions";
+import { actions } from "./keyValActions";
 
 document.addEventListener(
     "keydown",
@@ -37,6 +37,7 @@ document.addEventListener(
         event.preventDefault();
       } else {
         event.cancelBubble = true;
+        // window.event.returnValue = false;
       }
       return false;
     },
