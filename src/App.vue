@@ -3,13 +3,35 @@
     <header class="head">
       <!--   -->
       <div class="left-icons">
-        <aIcon @click.stop="pageStyle('normal')" class="icon" name="fullLayout" />
-        <aIcon @click.stop="pageStyle('aside')" class="icon" name="asideLayout" />
-        <aIcon @click.stop="pageStyle('dubAside')" class="icon" name="dubAsideLayout" />
+        <aIcon
+          @click.stop="pageStyle('normal')"
+          class="icon"
+          name="fullLayout"
+        />
+        <aIcon
+          @click.stop="pageStyle('aside')"
+          class="icon"
+          name="asideLayout"
+        />
+        <aIcon
+          @click.stop="pageStyle('dubAside')"
+          class="icon"
+          name="dubAsideLayout"
+        />
       </div>
 
       <div class="right-icons">
-        <aIcon class="icon" name="menu" />
+        <el-dropdown>
+          <span class="el-dropdown-link">
+            <aIcon class="icon" name="menu" />
+          </span>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item>导航中心</el-dropdown-item>
+              <el-dropdown-item>使用帮助</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
         <aIcon class="icon" name="personal" />
       </div>
     </header>
@@ -42,10 +64,10 @@ export default {
     }, 1000);
   },
   methods: {
-    pageStyle (style) {
-      this.cssLayout = style
-    }
-  }
+    pageStyle(style) {
+      this.cssLayout = style;
+    },
+  },
 };
 </script>
 
@@ -65,13 +87,12 @@ export default {
     justify-content: space-between;
     .left-icons,
     .right-icons {
-      color: #fff;
       .icon {
+        color: #fff;
         margin: 10px;
         font-size: 20px;
       }
     }
-    
   }
 }
 
@@ -87,14 +108,15 @@ export default {
   left: 0;
   right: 0;
   border: 1px solid #fff;
- display: flex; 
+  display: flex;
 }
 .main-normal {
   .aside {
     display: none;
   }
 }
-.main-aside, .main-dubAside{
+.main-aside,
+.main-dubAside {
   .aside {
     display: block;
     border-right: 1px solid #fff;
