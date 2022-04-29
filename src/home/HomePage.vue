@@ -42,8 +42,13 @@
     <RunningNum class="nums" :num="num" />
     <section :class="`main-${cssLayout}`">
       <aside class="aside">
-        <div class="analysis"></div>
-        <div class="news"></div>
+        <div class="contractAnalysis">
+          <!-- 异动合约，  -->
+          <!-- 当前大涨合约 -->
+        </div>
+        <div class="news">
+          <!-- 国内外新闻 -->
+        </div>
       </aside>
       <article class="contain"></article>
     </section>
@@ -84,6 +89,7 @@ export default {
 }
 .app {
   height: 100%;
+  min-width: 1000px;
   .head {
     padding: 0 35px;
     display: flex;
@@ -122,6 +128,7 @@ export default {
 .main-aside,
 .main-dubAside {
   .aside {
+    transition: all 2s linear;
     display: block;
     border-right: 1px solid #fff;
     height: 100%;
@@ -129,7 +136,7 @@ export default {
     max-width: 600px;
     min-width: 400px;
     flex-grow: 1;
-    .analysis {
+    .contractAnalysis {
       display: none;
     }
   }
@@ -145,7 +152,7 @@ export default {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    .analysis {
+    .contractAnalysis {
       display: block;
       flex-grow: 1;
     }
