@@ -7,9 +7,10 @@ import "./assets/fonts/index.css";
 const app = createApp(App);
 import "./modules/keyboardEventControl";
 
-import { RunningNum, Icon } from "./components/index.js";
+import { RunningNum, Icon , UnusualContract} from "./components/index.js";
 app.use(RunningNum);
 app.use(Icon);
+app.use(UnusualContract)
 
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'

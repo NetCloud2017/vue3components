@@ -45,6 +45,12 @@
         <div class="contractAnalysis">
           <!-- 异动合约，  -->
           <!-- 当前大涨合约 -->
+          <unusual-contract
+            class="contractItem"
+            v-for="(contract, index) in unusualContractList"
+            :key="index"
+            :contract="contract"
+          />
         </div>
         <div class="news">
           <!-- 国内外新闻 -->
@@ -57,10 +63,18 @@
 </template>
 
 <script>
+import UnusualContract from "@/components/unusualChangeItem/UnusualContract.vue";
 export default {
+  components: { UnusualContract },
   name: "HomePage",
   data: function () {
     return {
+      unusualContractList: [
+        {
+          contractName: "棕榈油",
+          contractPrice: "13523",
+        },
+      ],
       num: "25320",
       //  normal ,  aside , dubAside
       cssLayout: "normal",
@@ -136,7 +150,7 @@ export default {
     max-width: 600px;
     min-width: 400px;
     flex-grow: 1;
-    .contractAnalysis {
+    .news {
       display: none;
     }
   }
@@ -152,11 +166,11 @@ export default {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    .contractAnalysis {
+    .news {
       display: block;
       flex-grow: 1;
     }
-    .news {
+    .contractAnalysis{
       flex-grow: 1;
     }
   }
