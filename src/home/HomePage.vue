@@ -39,7 +39,7 @@
         <aIcon class="icon" name="personal" />
       </div>
     </header>
-    <RunningNum class="nums" :num="num" />
+    <!-- <RunningNum class="nums" :num="num" /> -->
     <section :class="`main-${cssLayout}`">
       <aside class="aside">
         <div class="contractAnalysis">
@@ -73,11 +73,12 @@ export default {
         {
           contractName: "棕榈油",
           contractPrice: "13523",
+          contractPercent: "10.02%",
         },
       ],
       num: "25320",
       //  normal ,  aside , dubAside
-      cssLayout: "normal",
+      cssLayout: "aside",
     };
   },
   mounted() {
@@ -105,7 +106,8 @@ export default {
   height: 100%;
   min-width: 1000px;
   .head {
-    padding: 0 35px;
+    padding: 15px;
+    height: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -115,6 +117,7 @@ export default {
         color: #fff;
         margin: 10px;
         font-size: 20px;
+        line-height: 40px;
       }
     }
   }
@@ -170,7 +173,7 @@ export default {
       display: block;
       flex-grow: 1;
     }
-    .contractAnalysis{
+    .contractAnalysis {
       flex-grow: 1;
     }
   }
