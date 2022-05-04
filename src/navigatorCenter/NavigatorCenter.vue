@@ -17,6 +17,10 @@ export default {
           routeName: "帮助中心",
           url: "/help",
         },
+        {
+          routeName: '首页',
+          url: '/'
+        }
       ],
     };
   },

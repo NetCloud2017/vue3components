@@ -31,7 +31,10 @@
                 <router-link to="/navigatorCenter">导航中心</router-link>
               </el-dropdown-item>
               <el-dropdown-item>
-                <router-link to="/help"> 使用帮助</router-link>
+                <router-link to="/help">使用帮助</router-link>
+              </el-dropdown-item>
+              <el-dropdown-item>
+                <router-link to="/advice">反馈建议</router-link>
               </el-dropdown-item>
             </el-dropdown-menu>
           </template>
