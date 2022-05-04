@@ -1,3 +1,5 @@
+ // 开发环境：npx vue-cli-service inspect --mode development >> webpack.config.development.js 导出文件
+ 
 module.exports = {
   mode: "development",
   context: "E:\\code\\vue\\mycomponentpro",

@@ -10,7 +10,10 @@ a {
     text-decoration: none;
     color: inherit;
 }
-p {
+p, ul, li, ol {
     padding: 0;
     margin: 0;
+}
+li {
+    list-style: none;
 }
