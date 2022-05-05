@@ -39,7 +39,18 @@
             </el-dropdown-menu>
           </template>
         </el-dropdown>
-        <aIcon class="icon" name="personal" />
+        <el-dropdown>
+          <span class="el-dropdown-link">
+            <aIcon class="icon" name="personal" />
+          </span>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item>
+                <router-link to="/signIn">登录</router-link>
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
       </div>
     </header>
     <!-- <RunningNum class="nums" :num="num" /> -->
@@ -109,7 +120,7 @@ export default {
   height: 100%;
   min-width: 1000px;
   .head {
-    padding: 15px;
+    padding: 15px 30px;
     height: 20px;
     display: flex;
     align-items: center;
