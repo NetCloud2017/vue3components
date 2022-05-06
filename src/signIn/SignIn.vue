@@ -1,5 +1,12 @@
 <template>
-  <div>登录页面</div>
+  <div class="loginForm">
+    <a-form>
+      <a-input v-model="phoneNo" />
+      <a-input v-model="email" />
+      <a-input v-model="password" />
+      <a-input v-model="userName" />
+    </a-form>
+  </div>
 </template>
 
 <script>
@@ -9,6 +16,8 @@ export default {
     return {
       userName: "",
       password: "",
+      email: '',
+      phoneNo: '',
     };
   },
 };
