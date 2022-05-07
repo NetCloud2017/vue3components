@@ -7,17 +7,23 @@ import "./assets/fonts/index.css";
 const app = createApp(App);
 import "./modules/keyboardEventControl";
 
-import { RunningNum, Icon , UnusualContract} from "./components/index.js";
+import {
+  RunningNum,
+  Icon,
+  AInput,
+  UnusualContract,
+  AForm
+} from "./components/index.js";
 app.use(RunningNum);
 app.use(Icon);
-app.use(UnusualContract)
+app.use(UnusualContract);
+app.use(AInput);
+app.use(AForm);
+import ElementPlus from "element-plus";
+import "element-plus/dist/index.css";
+app.use(ElementPlus);
 
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
-app.use(ElementPlus)
-
-import {router} from './router'
-app.use(router)
-
+import { router } from "./router";
+app.use(router);
 
 app.mount("#app");
