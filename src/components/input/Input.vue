@@ -13,6 +13,9 @@ export default {
       default: "text",
     },
   },
+  mounted () {
+      console.log(this, 'uuu');
+  }
 };
 </script>
 

@@ -1,19 +1,31 @@
-html, body {
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 0;
-    margin: 0;
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0;
+  margin: 0;
 }
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
-p, ul, li, ol {
-    padding: 0;
-    margin: 0;
+p,
+ul,
+li,
+ol,
+input {
+  padding: 0;
+  margin: 0;
 }
 li {
-    list-style: none;
+  list-style: none;
+}
+
+input, select, option, textarea {
+  border: none;
+  appearance: none;
+  outline: none;
+  background: none;
 }
