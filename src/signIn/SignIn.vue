@@ -1,10 +1,10 @@
 <template>
   <div class="loginForm">
     <a-form>
-      <a-input v-model="phoneNo" />
-      <a-input v-model="email" />
-      <a-input v-model="password" />
-      <a-input v-model="userName" />
+      <a-input @blur="onBlur" v-model:value="phoneNo" />
+      <a-input v-model:value="email" />
+      <a-input v-model:value="password" />
+      <a-input v-model:value="userName" />
     </a-form>
   </div>
 </template>
@@ -16,9 +16,18 @@ export default {
     return {
       userName: "",
       password: "",
-      email: '',
-      phoneNo: '',
+      email: "",
+      phoneNo: "",
     };
+  },
+
+  mounted() {
+    console.log(this, "uux");
+  },
+  methods: {
+    onBlur(val) {
+      console.log("2323", val);
+    },
   },
 };
 </script>

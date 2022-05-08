@@ -1,21 +1,28 @@
 <template>
   <div class="inputItem">
-    <input v-bind="$listens" type="text" />
+    <input
+      v-bind="$attrs"
+      @input="$emit('update:value', $event.target.value)"
+      :value="value"
+      type="text"
+    />
   </div>
 </template>
 
 <script>
 export default {
   name: "aInput",
+  emits: ["update:value"],
   props: {
     type: {
       type: String,
       default: "text",
     },
+    value: { type: String },
   },
-  mounted () {
-      console.log(this, 'uuu');
-  }
+  mounted() {
+    console.log(this, "uuu");
+  },
 };
 </script>
 
