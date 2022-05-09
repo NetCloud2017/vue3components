@@ -26,11 +26,28 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
 .inputItem {
-  width: 200px;
+  min-width: 150px;
+  max-width: 850px;
+  width: 100%;
   height: 50px;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  input {
+    height: 100%;
+    width: 100%;
+    caret-color: #fff;
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: 2px;
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
+
 }
 </style>

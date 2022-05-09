@@ -24,6 +24,9 @@ export default {
   mounted() {
     console.log(this, "uux");
   },
+  beforeUpdate() {
+    console.log(this.userName, 'uunnnnn');
+  },
   methods: {
     onBlur(val) {
       console.log("2323", val);
