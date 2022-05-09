@@ -33,8 +33,8 @@ document.addEventListener(
   
       // 阻止 浏览器 快捷键 默认事件
       if (event.preventDefault) {
-        event.stopPropagation();
-        event.preventDefault();
+        // event.stopPropagation(); // 加了停止事件传递则输入框不能输入了
+        event.preventDefault(); // 防止默认事件
       } else {
         event.cancelBubble = true;
         // window.event.returnValue = false;
