@@ -28,6 +28,8 @@ export default {
 
 <style lang="less" scoped>
 .inputItem {
+  box-sizing: border-box;
+
   min-width: 150px;
   max-width: 850px;
   width: 100%;
@@ -48,6 +50,5 @@ export default {
     box-sizing: border-box;
     padding: 0 10px;
   }
-
 }
 </style>

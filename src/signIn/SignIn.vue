@@ -1,5 +1,5 @@
 <template>
-  <div class="loginForm">
+  <div class="loginPage">
     <a-form>
       <a-input @blur="onBlur" v-model:value="phoneNo" />
       <a-input v-model:value="email" />
@@ -35,4 +35,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="less" scoped>
+  .loginPage {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../assets/imgs/futures_login_backgroundImg.jpeg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>> 
