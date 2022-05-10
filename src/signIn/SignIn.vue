@@ -7,7 +7,7 @@
       <a-input v-model:value="userName" />
       <a-input v-model:value="emailAddress" />
       <a-input v-model:value="verificationCode" />
-      <!-- <a-input v-model:value="agreeContract" /> -->
+      <a-input v-model:value="agreeContract" />
       
     </a-form>
     

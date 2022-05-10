@@ -88,6 +88,7 @@ export default {
           contractName: "棕榈油",
           contractPrice: "13523",
           contractPercent: "10.02%",
+          // riseAndFall: 'rise' // fall 
         },
       ],
       num: "25320",

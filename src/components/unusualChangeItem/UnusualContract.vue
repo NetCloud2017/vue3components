@@ -5,11 +5,11 @@
         <span>
           {{ contract.contractName }}
         </span>
-        <span :class="['percent', contract.riseAndFall ? 'rise' : 'fall']">
+        <span :class="['percent', contract.riseAndFall]">
           {{ contract.contractPercent }}
         </span>
       </div>
-      <p :class="['currentPrice', contract.riseAndFall ? 'rise' : 'fall']">
+      <p :class="['currentPrice', contract.riseAndFall]">
         {{ contract.contractPrice }}
       </p>
     </div>
@@ -36,11 +36,11 @@ export default {
   align-items: center;
   padding: 8px 5px;
   .contractInfo {
+    color: #fff;
     .contractTitle {
       font-size: 16px;
       font-weight: bold;
       line-height: 16px;
-      color: #fff;
       margin-bottom: 5px;
       .percent {
         font-size: 18px;
@@ -48,10 +48,10 @@ export default {
       }
     }
     .rise {
-      color: red;
+      color: rgba(252, 22, 22, 1);
     }
     .fall {
-      color: green;
+      color: #15f711;
     }
     .currentPrice {
       font-size: 23px;
