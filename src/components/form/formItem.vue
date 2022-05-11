@@ -1,13 +1,26 @@
 <template>
-  <div></div>
+  <div>
+    <label>
+      {{label}}
+      <slot></slot>
+    </label>
+  </div>
 </template>
 
 <script>
+import { reactive } from "vue";
 export default {
-name: 'form-item'
-}
+  name: 'form-item',
+  props: {
+    label: String,
+    setup() {
+      const data = reactive({
+        name: "iwe",
+      });
+      return data;
+    },
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style lang="scss" scoped></style>

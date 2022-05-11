@@ -12,13 +12,15 @@ import {
   Icon,
   AInput,
   UnusualContract,
-  AForm
+  AForm,
+  FormItem,
 } from "./components/index.js";
 app.use(RunningNum);
 app.use(Icon);
 app.use(UnusualContract);
 app.use(AInput);
 app.use(AForm);
+app.use(FormItem);
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 app.use(ElementPlus);
