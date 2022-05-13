@@ -1,16 +1,26 @@
 <template>
   <div class="loginPage">
     <a-form :data="form">
-      <a-input @blur="onBlur" v-model:value="phoneNo" />
-      <a-input v-model:value="email" />
-      <a-input v-model:value="password" />
-      <a-input v-model:value="userName" />
-      <a-input v-model:value="emailAddress" />
-      <a-input v-model:value="verificationCode" />
-      <a-input v-model:value="agreeContract" />
-      
+      <form-item :label="'用户名'">
+        <a-input v-model:value="userName" />
+      </form-item>
+      <form-item :label="'密码'">
+        <a-input v-model:value="password" />
+      </form-item>
+      <form-item :label="'电话号码'">
+        <a-input @blur="onBlur" v-model:value="phoneNo" />
+      </form-item>
+
+      <form-item :label="'邮箱地址'">
+        <a-input v-model:value="emailAddress" />
+      </form-item>
+      <form-item :label="'验证码'">
+        <a-input v-model:value="verificationCode" />
+      </form-item>
+      <form-item :label="'用户协议'">
+        <a-input v-model:value="agreeContract" />
+      </form-item>
     </a-form>
-    
   </div>
 </template>
 
