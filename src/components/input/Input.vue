@@ -41,7 +41,7 @@ export default {
     height: 100%;
     width: 100%;
     caret-color: #fff;
-    font-size: 20px;
+    font-size: 15px;
     color: #fff;
     letter-spacing: 2px;
     box-sizing: border-box;

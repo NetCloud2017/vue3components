@@ -1,7 +1,9 @@
 <template>
   <div>
-    <label>
-      {{label}}
+    <label class="labelTag">
+      <span class="labelText">
+        {{ label }}
+      </span>
       <slot></slot>
     </label>
   </div>
@@ -10,7 +12,7 @@
 <script>
 import { reactive } from "vue";
 export default {
-  name: 'form-item',
+  name: "form-item",
   props: {
     label: String,
     setup() {
@@ -23,4 +25,18 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="less" scoped>
+  .labelTag {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .labelText {
+      text-align: right;
+      padding-right: 25px;
+      flex-shrink: 0;
+      min-width: 80px;
+
+    }
+  }
+</style>
