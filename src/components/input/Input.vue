@@ -33,7 +33,7 @@ export default {
   min-width: 150px;
   max-width: 850px;
   width: 100%;
-  height: 50px;
+  height: 48px;
   background-color: rgba(255, 255, 255, 0.1);
   input {
     border-radius: 7px;

@@ -46,7 +46,7 @@ const form = reactive({
   width: 100%;
   height: 100vh;
   background-image: url("../assets/imgs/futures_login_backgroundImg.jpeg");
-  background-size: 100%;
+  background-size:  100% 100%;
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
