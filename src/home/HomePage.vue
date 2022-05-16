@@ -78,6 +78,7 @@
 
 <script>
 import UnusualContract from "@/components/unusualChangeItem/UnusualContract.vue";
+
 export default {
   components: { UnusualContract },
   name: "HomePage",
@@ -88,7 +89,7 @@ export default {
           contractName: "棕榈油",
           contractPrice: "13523",
           contractPercent: "10.02%",
-          // riseAndFall: 'rise' // fall 
+          // riseAndFall: 'rise' // fall
         },
       ],
       num: "25320",
