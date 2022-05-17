@@ -19,6 +19,7 @@
 
 <script>
 import * as Echarts from "echarts";
+import { fetchData } from "../../api";
 let myChart = null;
 export default {
   name: "unusual-contract",
@@ -29,6 +30,16 @@ export default {
   },
   setup() {},
   mounted() {
+    fetchData({
+      url: "futures_zh_spot",
+      data: {
+        subscribe_list: "P2209",
+        market: "CF",
+        adjust: "0",
+      },  
+    }).then((res) => {
+      console.log(res, "dat222a");
+    });
     this.$nextTick(() => {
       myChart = Echarts.init(this.$refs.quotationMap);
       myChart.setOption({

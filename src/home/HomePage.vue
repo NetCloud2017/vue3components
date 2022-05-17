@@ -78,7 +78,7 @@
 
 <script>
 import UnusualContract from "@/components/unusualChangeItem/UnusualContract.vue";
-
+import { fetchData } from "../api";
 export default {
   components: { UnusualContract },
   name: "HomePage",
@@ -102,6 +102,15 @@ export default {
       // 10000 到 99999 取值
       this.num = Math.floor(Math.floor(Math.random() * 90000) + 1) + 9999 + "";
     }, 1000);
+
+    fetchData({
+      url: "futures_comm_info",
+      data: {
+        symbol: "所有",
+      },
+    }).then((res) => {
+      console.log(res, "data");
+    });
   },
   methods: {
     pageStyle(style) {
@@ -139,8 +148,8 @@ export default {
   }
 }
 
-.main-aside,
 .main-normal,
+.main-aside,
 .main-dubAside {
   //  要实现响应式布局
   box-sizing: border-box;
@@ -157,7 +166,12 @@ export default {
   .aside {
     display: none;
   }
+  .contain {
+    flex-grow: 1;
+  }
 }
+
+
 .main-aside,
 .main-dubAside {
   .aside {
@@ -166,7 +180,7 @@ export default {
     border-right: 1px solid #fff;
     height: 100%;
     min-height: 740px;
-    max-width: 600px;
+    max-width: 520px;
     min-width: 400px;
     flex-grow: 1;
     .news {
