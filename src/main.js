@@ -7,20 +7,10 @@ import "./assets/fonts/index.css";
 const app = createApp(App);
 import "./modules/keyboardEventControl";
 
-import {
-  RunningNum,
-  Icon,
-  AInput,
-  UnusualContract,
-  AForm,
-  FormItem,
-} from "./components/index.js";
-app.use(RunningNum);
-app.use(Icon);
-app.use(UnusualContract);
-app.use(AInput);
-app.use(AForm);
-app.use(FormItem);
+import CustomComponent from "./components";
+// app.use(CustomComponent, {components: ['xxxx']});
+
+app.use(CustomComponent);
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 app.use(ElementPlus);
