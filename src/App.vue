@@ -1,5 +1,5 @@
 <template>
-    <RunningNum class="roo" :num="num"></RunningNum>
+    <!-- <RunningNum class="roo" :num="num"></RunningNum> -->
     <router-view></router-view>
 </template>
 
@@ -10,12 +10,12 @@ export default defineComponent({
 
     setup() {
         let num = ref(0);
-        setInterval(() => {
-            num.value = Math.floor(Math.random() * 100 + 1);
-        }, 2000);
+        // setInterval(() => {
+        //     num.value = Math.floor(Math.random() * 100 + 1);
+        // }, 2000);
         return {
             num,
-        };  
+        };
     },
 });
 </script>
