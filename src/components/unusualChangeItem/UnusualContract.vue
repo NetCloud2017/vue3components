@@ -43,25 +43,35 @@ export default {
         this.$nextTick(() => {
             myChart = Echarts.init(this.$refs.quotationMap);
             myChart.setOption({
+                backgroundColor: "rgba(255,255,255, 0.3)",
                 xAxis: {
                     type: "category",
                     data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+                    show: false,
+                    boundaryGap: false,
                 },
                 yAxis: {
                     type: "value",
                     splitLine: false,
                     min: 820,
-                    splitNumber: 1000,
+
                     max: 1330,
-                    axisTick: {
-                        show: false,
-                    },
+                    show: false,
                 },
                 series: [
                     {
+                        symbol: "none", // 去除 横向线。
                         data: [820, 932, 901, 934, 1290, 1330, 1320],
                         type: "line",
                         smooth: true,
+                        itemStyle: {
+                            normal: {
+                                lineStyle: {
+                                    width: 0.5, // 0.1的线条是非常细的了
+                                    color: "red",
+                                },
+                            },
+                        },
                     },
                 ],
             });
@@ -73,7 +83,7 @@ export default {
 <style lang="less">
 .item {
     width: 100%;
-    height: 50px;
+    height: 100px;
     display: flex;
     align-items: center;
     // padding: 8px 5px;
@@ -103,7 +113,7 @@ export default {
     }
     .quotationMap {
         flex-grow: 1;
-        height: 50px;
+        height: 100px;
     }
 }
 </style>
