@@ -44,19 +44,27 @@ export default {
             myChart = Echarts.init(this.$refs.quotationMap);
             myChart.setOption({
                 backgroundColor: "rgba(255,255,255, 0.3)",
+                grid: {
+                    //  xy 轴位置
+                    left: 0,
+                    // right: 0,
+                    // height: "100%",
+                    bottom: 0,
+                },
                 xAxis: {
                     type: "category",
                     data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
                     show: false,
-                    boundwaryGap: false,
+                    boundaryGap: false,
                 },
                 yAxis: {
                     type: "value",
                     splitLine: false,
-                    min: 820,
+                    min: 0,
 
                     max: 1330,
                     show: false,
+                    left: 0,
                 },
                 series: [
                     {
