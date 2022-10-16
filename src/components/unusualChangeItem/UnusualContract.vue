@@ -48,7 +48,7 @@ export default {
                     type: "category",
                     data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
                     show: false,
-                    boundaryGap: false,
+                    boundwaryGap: false,
                 },
                 yAxis: {
                     type: "value",
