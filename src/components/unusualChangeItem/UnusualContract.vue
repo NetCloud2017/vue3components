@@ -11,6 +11,7 @@ export default defineComponent({
             type: Object,
         },
     },
+    emits: ["getFutures"],
     setup() {
         let quotationMap = ref(null);
         onMounted(() => {
@@ -74,11 +75,16 @@ export default defineComponent({
             quotationMap,
         };
     },
+    methods: {
+        emitItem() {
+            this.$emit("getFutures", this.contract);
+        },
+    },
 });
 </script>
 
 <template>
-    <div class="item">
+    <div class="item" @click="emitItem">
         <div class="contractInfo">
             <div class="contractTitle">
                 {{ contract.contractName }}
