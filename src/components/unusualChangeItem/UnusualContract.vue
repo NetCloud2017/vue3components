@@ -2,13 +2,11 @@
     <div class="item">
         <div class="contractInfo">
             <div class="contractTitle">
-                <span>
-                    {{ contract.contractName }}
-                </span>
-                <span :class="['percent', contract.riseAndFall]">
-                    {{ contract.contractPercent }}
-                </span>
+                {{ contract.contractName }}
             </div>
+            <span :class="['percent', contract.riseAndFall]">
+                {{ contract.contractPercent }}
+            </span>
             <p :class="['currentPrice', contract.riseAndFall]">
                 {{ contract.contractPrice }}
             </p>
@@ -95,17 +93,20 @@ export default {
     display: flex;
     align-items: center;
     // padding: 8px 5px;
+    text-align: center;
     .contractInfo {
         color: #fff;
+        min-width: 110px;
         .contractTitle {
             font-size: 16px;
             font-weight: bold;
             line-height: 16px;
             margin-bottom: 5px;
-            .percent {
-                font-size: 18px;
-                margin-left: 10px;
-            }
+        }
+        .percent {
+            font-size: 15px;
+            font-weight: 600;
+            margin-left: 10px;
         }
         .rise {
             color: rgba(252, 22, 22, 1);
