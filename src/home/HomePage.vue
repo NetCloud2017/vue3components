@@ -131,7 +131,7 @@ export default {
     font-size: 14px;
 }
 .app {
-    height: 100%;
+    height: 100vh;
     min-width: 1000px;
     .head {
         padding: 15px 30px;
