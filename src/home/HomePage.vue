@@ -1,61 +1,13 @@
 <template>
     <div class="app">
-        <header class="head">
-            <!--   -->
-            <div class="left-icons">
-                <aIcon
-                    @click.stop="pageStyle('normal')"
-                    class="icon"
-                    name="fullLayout"
-                />
-                <aIcon
-                    @click.stop="pageStyle('aside')"
-                    class="icon"
-                    name="asideLayout"
-                />
-                <aIcon
-                    @click.stop="pageStyle('dubAside')"
-                    class="icon"
-                    name="dubAsideLayout"
-                />
-            </div>
-
-            <div class="right-icons">
-                <el-dropdown>
-                    <span class="el-dropdown-link">
-                        <aIcon class="icon" name="menu" />
-                    </span>
-                    <template #dropdown>
-                        <el-dropdown-menu>
-                            <el-dropdown-item>
-                                <router-link to="/navigatorCenter"
-                                    >导航中心</router-link
-                                >
-                            </el-dropdown-item>
-                            <el-dropdown-item>
-                                <router-link to="/help">使用帮助</router-link>
-                            </el-dropdown-item>
-                            <el-dropdown-item>
-                                <router-link to="/advice">反馈建议</router-link>
-                            </el-dropdown-item>
-                        </el-dropdown-menu>
-                    </template>
-                </el-dropdown>
-                <el-dropdown>
-                    <span class="el-dropdown-link">
-                        <aIcon class="icon" name="personal" />
-                    </span>
-                    <template #dropdown>
-                        <el-dropdown-menu>
-                            <el-dropdown-item>
-                                <router-link to="/signIn">登录</router-link>
-                            </el-dropdown-item>
-                        </el-dropdown-menu>
-                    </template>
-                </el-dropdown>
-            </div>
-        </header>
         <!-- <RunningNum class="nums" :num="num" /> -->
+        <page-header
+            @layoutStyle="
+                (style) => {
+                    cssLayout = style;
+                }
+            "
+        />
         <section :class="`main-${cssLayout}`">
             <aside class="aside">
                 <div class="contractAnalysis">
@@ -72,7 +24,7 @@
                     <!-- 国内外新闻 -->
                 </div>
             </aside>
-            <article class="contain"></article>
+            <main-module class="contain" />
         </section>
         <footer></footer>
     </div>
@@ -80,9 +32,11 @@
 
 <script>
 import UnusualContract from "@/components/unusualChangeItem/UnusualContract.vue";
+import PageHeader from "./header/PageHeader.vue";
+import MainModule from "./mian/MainModule.vue";
 import { fetchData } from "../api";
 export default {
-    components: { UnusualContract },
+    components: { UnusualContract, PageHeader, MainModule },
     name: "HomePage",
     data: function () {
         return {
@@ -115,11 +69,6 @@ export default {
             console.log(res, "data");
         });
     },
-    methods: {
-        pageStyle(style) {
-            this.cssLayout = style;
-        },
-    },
 };
 </script>
 
@@ -133,22 +82,6 @@ export default {
 .app {
     height: 100vh;
     min-width: 1000px;
-    .head {
-        padding: 15px 30px;
-        height: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .left-icons,
-        .right-icons {
-            .icon {
-                color: #fff;
-                margin: 10px;
-                font-size: 20px;
-                line-height: 40px;
-            }
-        }
-    }
 }
 
 .main-normal,
