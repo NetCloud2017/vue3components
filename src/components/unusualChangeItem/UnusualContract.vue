@@ -1,5 +1,4 @@
 <script>
-import * as Echarts from "echarts";
 import { fetchData } from "../../api";
 import { defineComponent, onMounted, ref, nextTick } from "vue";
 
@@ -24,50 +23,6 @@ export default defineComponent({
                 },
             }).then((res) => {
                 console.log(res, "dat222a");
-            });
-            nextTick(() => {
-                myChart = Echarts.init(quotationMap.value);
-                myChart.setOption({
-                    backgroundColor: "rgba(255,255,255, 0.3)",
-                    grid: {
-                        //  xy 轴位置
-                        left: 0,
-                        // right: 0,
-                        // height: "100%",
-                        bottom: 0,
-                    },
-                    xAxis: {
-                        type: "category",
-                        data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-                        show: false,
-                        boundaryGap: false,
-                    },
-                    yAxis: {
-                        type: "value",
-                        splitLine: false,
-                        min: 0,
-
-                        max: 1330,
-                        show: false,
-                        left: 0,
-                    },
-                    series: [
-                        {
-                            symbol: "none", // 去除 横向线。
-                            data: [820, 932, 901, 934, 1290, 1330, 1320],
-                            type: "line",
-                            smooth: true,
-                            itemStyle: {
-                                normal: {
-                                    lineStyle: {
-                                        width: 0.5, // 0.1的线条是非常细的了
-                                        color: "red",
-                                    },
-                                },
-                            },
-                        },
-                    ],
-                });
             });
         });
 
