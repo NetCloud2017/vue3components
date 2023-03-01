@@ -4,7 +4,7 @@
 </template>
 
 <script setup>
-import { ref, nextTick } from "vue";
+import { ref } from "vue";
 let kLineChart = ref(null);
 </script>
 

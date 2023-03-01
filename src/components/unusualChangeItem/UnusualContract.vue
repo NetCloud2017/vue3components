@@ -1,8 +1,8 @@
 <script>
 import { fetchData } from "../../api";
-import { defineComponent, onMounted, ref, nextTick } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 
-let myChart = null;
+// let myChart = null;
 export default defineComponent({
     name: "unusual-contract",
     props: {
