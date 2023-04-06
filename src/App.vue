@@ -10,6 +10,7 @@ export default defineComponent({
 
     setup() {
         let num = ref(0);
+
         // setInterval(() => {
         //     num.value = Math.floor(Math.random() * 100 + 1);
         // }, 2000);
