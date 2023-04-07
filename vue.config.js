@@ -10,5 +10,9 @@ module.exports = defineConfig({
         host: "localhost",
         port: "8000",
     },
-    configureWebpack: swp.wrap({}),
+    configureWebpack: swp.wrap({
+        resolve: {
+            extensions: ["ts", "tsx"],
+        },
+    }),
 });

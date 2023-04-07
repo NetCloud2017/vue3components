@@ -1,24 +1,28 @@
 <template>
-    <div ref="kLineChart" class="kLineChart"></div>
-    <div class="test">
-        <div>{{ data.count }}</div>
-        <div>{{ doubleCount }}</div>
-        <button @click="add">add</button>
+    <div>
+        <component :is="activeComponent"></component>
     </div>
 </template>
 
-<script setup>
-import { ref, reactive, computed } from "vue";
-let kLineChart = ref(null);
-const data = reactive({
-    count: 0,
-});
-let doubleCount = computed(() => {
-    return data.count * 2;
-});
-function add() {
-    data.count++;
-}
+<script>
+import RefTest from "./vue3Test/ref.vue";
+import TeleportTest from "./vue3Test/Teleport.vue";
+import { useRoute } from "vue-router";
+import { ref } from "vue";
+export default {
+    setup() {
+        let { query } = useRoute();
+
+        let activeComponent = ref((query && query.testModule) || "");
+        return {
+            activeComponent,
+        };
+    },
+    components: {
+        RefTest,
+        TeleportTest,
+    },
+};
 </script>
 
 <style lang="less" scoped>
