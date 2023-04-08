@@ -1,9 +1,16 @@
 <template>
-    <component v-bind="_attrs" :is="activeComponent"></component>
+    <div>
+        <component
+            v-bind="activeAttrs"
+            :is="activeComponent"
+            @closeEmit="activeAttrs.closeEmit"
+        ></component>
+        <button @click="activeAttrs.openModule">open teleport</button>
+    </div>
 </template>
 
 <script>
-import { ref, toRefs } from "vue";
+import { reactive, ref } from "vue";
 import { useRoute } from "vue-router";
 import RefTest from "./vue3Test/ref.vue";
 import TeleportTest from "./vue3Test/Teleport.vue";
@@ -11,16 +18,24 @@ export default {
     setup() {
         const { query } = useRoute();
         let activeComponent = ref(query.testModule || "");
-        const moduleAttrs = {
-            RefTest: {},
-            TeleportTest: {
-                isOpen: false,
-                closeModule: function () {},
-            },
+
+        // teleport code
+        let isOpen = ref(false);
+        const closeEmit = () => {
+            isOpen.value = false;
+            console.log("close");
         };
-        const _attrs = toRefs(moduleAttrs[query.testModule]);
+        const openModule = () => {
+            isOpen.value = true;
+            console.log(isOpen, "23");
+        };
+        const activeAttrs = reactive({
+            isOpen,
+            closeEmit,
+            openModule,
+        });
         return {
-            _attrs,
+            activeAttrs,
             activeComponent,
         };
     },
