@@ -14,6 +14,7 @@ import { reactive, ref } from "vue";
 import { useRoute } from "vue-router";
 import RefTest from "./vue3Test/ref.vue";
 import TeleportTest from "./vue3Test/Teleport.vue";
+import SuspenseTest from "./vue3Test/SupenseTest.vue";
 export default {
     setup() {
         const { query } = useRoute();
@@ -42,6 +43,7 @@ export default {
     components: {
         RefTest,
         TeleportTest,
+        SuspenseTest,
     },
 };
 </script>
