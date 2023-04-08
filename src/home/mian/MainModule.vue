@@ -1,20 +1,26 @@
 <template>
-    <div>
-        <component :is="activeComponent"></component>
-    </div>
+    <component v-bind="_attrs" :is="activeComponent"></component>
 </template>
 
 <script>
+import { ref, toRefs } from "vue";
+import { useRoute } from "vue-router";
 import RefTest from "./vue3Test/ref.vue";
 import TeleportTest from "./vue3Test/Teleport.vue";
-import { useRoute } from "vue-router";
-import { ref } from "vue";
 export default {
     setup() {
-        let { query } = useRoute();
-
-        let activeComponent = ref((query && query.testModule) || "");
+        const { query } = useRoute();
+        let activeComponent = ref(query.testModule || "");
+        const moduleAttrs = {
+            RefTest: {},
+            TeleportTest: {
+                isOpen: false,
+                closeModule: function () {},
+            },
+        };
+        const _attrs = toRefs(moduleAttrs[query.testModule]);
         return {
+            _attrs,
             activeComponent,
         };
     },
