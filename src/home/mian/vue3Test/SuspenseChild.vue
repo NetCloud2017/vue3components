@@ -16,7 +16,8 @@ export default defineComponent({
             }, 2000);
         });
         let { data } = await axios.get(
-            " https://dog.ceo/api/breed/spitz/japanese/images/random"
+            // " https://dog.ceo/api/breed/spitz/japanese/images/random"
+            "https://dog.ceo/api/breed/images" // error captrued
         );
         return {
             count,
