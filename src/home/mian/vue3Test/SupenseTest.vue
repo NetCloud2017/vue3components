@@ -1,7 +1,10 @@
 <template>
     <div class="suspense">
         <Suspense>
-            <template #default><SuspenseChild></SuspenseChild></template>
+            <template #default>
+                <!--这里可以放多个组件  -->
+                <SuspenseChild></SuspenseChild
+            ></template>
             <template #fallback>loading ......</template>
         </Suspense>
     </div>
