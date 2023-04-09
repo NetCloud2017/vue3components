@@ -3,13 +3,14 @@
         <div class="module" v-if="isOpen">
             <slot>default text</slot>
             <button @click="closeModule">close</button>
+            <div>{{ isKey }}</div>
         </div>
     </teleport>
 </template>
 
 <script>
 import { defineComponent, onBeforeUpdate } from "vue";
-
+import useKey from "./useKey";
 export default defineComponent({
     setup(props, ctx) {
         const closeModule = () => {
@@ -21,8 +22,10 @@ export default defineComponent({
         onBeforeUpdate(() => {
             console.log(props, "teleport");
         });
+        let isKey = useKey("h");
         return {
             closeModule,
+            isKey,
         };
     },
     props: {
