@@ -9,7 +9,7 @@ import "./modules/keyboardEventControl";
 
 import CustomComponent from "./components";
 // app.use(CustomComponent, {components: ['xxxx']});
-
+// document.requestFullscreen();
 app.use(CustomComponent);
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
